@@ -1,0 +1,51 @@
+/* styling for edit profile page */
+#editPage{
+    text-align: center;
+    background: rgb(44, 44, 44);
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+.editTag{
+    margin: 0 auto;
+    padding: .05em 0;
+    border-radius: none;
+    background: rgb(255, 181, 43);
+    width: 30%;
+}
+form{
+    width: 60%;
+    margin: 2em auto 2em;
+    border: 2px dashed rgb(255, 196, 0);
+    padding: 2em 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-evenly;
+}
+input{
+    width: 45%;
+    margin: 1em 0;
+    padding: 1em 0 1em .5em;
+    font-size: 15px;
+    border-radius: 10px;
+    /* border: 1px solid rgb(0, 0, 0); */
+    border: none;
+}
+input[type=submit]{
+    background: rgb(19, 172, 19);
+    width: 20%;
+    color: white;
+}
+input[type=submit]:hover{
+    background: rgb(60, 252, 60);
+    transform: scale(1.1);
+}
+a{
+    color: white;
+}
+
+button{
+    padding: .5em;
+    margin: 0 0 .5em;
+}

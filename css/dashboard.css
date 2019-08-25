@@ -1,0 +1,415 @@
+body{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100vh;
+    color: white;
+    font-family: Ubuntu;
+    background: rgb(206, 200, 200);
+}
+
+/* This SECTION is for the HEADER | PROFILE section of the dashboard */
+header{
+    width: 20vw;
+    height: 100vh;
+    background: rgb(44, 44, 44);
+    text-align: center;
+    z-index: 2;
+}
+header img{
+    width: 65%;
+    height: 25%;
+    border: 5px solid rgb(145, 144, 144);
+    margin-top: 10%;
+    border-radius: 100%;
+}
+button#logout{
+    position: absolute;
+    top: 93vh;
+    padding: .5em 0;
+    width: 6%;
+    font-size: 17px;
+    border: none;
+    background: rgb(255, 255, 255);
+    color: rgb(17, 16, 16);
+    border-radius: 70px; 
+}
+button#logout:hover{
+    transform: scale(1.1);
+}
+button.edit_button{
+    border: none;
+    border-radius: 70px; 
+    font-family: Ubuntu;
+    margin: 10px 3px 0;
+    color: rgb(19, 19, 19);
+}
+button.edit_button:hover{
+    background: rgb(255, 255, 255);
+    color: black;
+    transform: scale(1.1);
+}
+#user_details{
+    width: 90%;
+    margin: 15% auto 0;
+}
+#user_details h2{
+    text-transform: uppercase;
+    width: 100%;
+}
+header table{
+    margin: 0 auto 5%;
+    text-align: left;
+    font-size: 14px;
+    border-collapse: collapse;
+    /* height: 150px; */
+}
+tr{
+    border-bottom: 2px solid rgb(44, 44, 44);
+}
+tr:last-child{
+    border-bottom: none;
+}
+td{
+    border: none;
+    padding: .4em;
+}
+.detail_item{
+    background: rgb(117, 116, 117);
+    text-transform: capitalize;
+}
+.detail_input{
+    background: rgb(72, 72, 73);
+}
+#detail{
+    /* color: red; */
+    font-size: 20px;
+    margin: auto;
+}
+#std_profile{
+    width: 100%;
+}
+
+
+/* css styling for the upload form.. */
+#upload_div{
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    /* text-align: center; */
+}
+#upload_form{
+    position: relative;
+    top: 30%;
+    right: .5%;
+    width: 30%;
+    border: none;
+    padding: 5em 0 10em;
+    margin: auto;
+    text-align: center;
+    background: rgb(15, 15, 15);
+}
+#hide_button{
+    position: relative;
+    top: 29.5%;
+    left: 59.595%;
+    border: none;
+    color: white;
+    font-size: 20px;
+    padding: 0 .5em;
+    background: rgb(214, 86, 92);
+    line-height: 1.5em;
+}
+#deadline{
+    position: relative;
+    top: 10%;
+    left: 42%;
+    width: 15%;
+    /* background: red; */
+    text-align: center;
+}
+#deadline label{
+    background: rgb(214, 86, 92);
+    margin: 0;
+    padding: .5em 3.39em;
+    width: 90%;
+    /* font-size: 15px; */
+}
+#deadline_comment{
+    width: 90%;
+    padding: .49em;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+#file + label{
+    font-size: 15px;
+    /* font-weight: 700; */
+    color: white;
+    background-color: rgb(110, 110, 110);
+    display: inline;
+    width: 100px;
+    padding: 1em ;
+    text-align: center;
+    border: none;
+    margin: .15em 0 0;
+    border-top-left-radius: 10px;
+    /* border-bottom-left-radius: 10px; */
+}  
+#submit{
+    width: 100px;
+    margin: 0;
+    padding:.9em 1em 1em;
+    border-top-right-radius: 10px;
+    /* border-bottom-right-radius: 10px; */
+}
+#submit:hover{
+    background: rgb(214, 86, 92);
+}
+#lecturer_comment:hover{
+    /* padding: 0 3em; */
+    /* height: 0; */
+    content: "Set deadline";
+    /* width: 40%; */
+    background: black;
+    /* color: white; */
+    /* margin: 1em 0 0; */
+    /* line-height: 0px; */
+}
+
+/* css styling for the input forms including the upload button */
+.assignment_form{
+    display: flex;
+}
+section{
+    width: 40%;
+    /* background: gray; */
+}
+section input{
+    width: 98%;
+    padding: 1.5em .5em;
+    font-size: 15px;
+    /* border-radius: 10px; */
+    border: none;
+    margin-top: .5em;
+}
+section input[type=submit]{
+    width: 150px;
+    background: rgb(54, 180, 54);
+    color: white;
+}
+#lecturer_comment{
+    /* border-top-left-radius: 50px;  */
+    /* border-bottom-left-radius: 50px;  */
+    width: 60%;
+    /* margin-left: 5em;  */
+}
+
+#file, #profile_photo{
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+#file_icon,#profile_photo_label{
+    cursor: pointer;
+}
+.file{
+    font-size: 3em;
+    /* font-weight: 700; */
+    color: white;
+    background-color: black;
+    display: inline-block;
+    width: 90px;
+    height: 70px;
+    text-align: center;
+    border: none;
+    margin: .15em 0 0;
+}
+
+#file:focus + label,
+#file + label:hover {
+    background-color: rgb(110, 110, 110);
+}
+
+
+
+.post{
+    background: white;
+    padding: .5em;
+    margin: 3% 0;
+    color: black;
+}
+aside{
+    background: rgb(40, 40, 40);
+    width: 35%;
+    text-align: center;
+}
+
+
+#profile_photo_label{
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(214, 86, 92);
+    display: inline-block;
+    width: 100px;
+    padding: .5em;
+    text-align: center;
+    border: none;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    margin: .5em 0 0;-
+}
+#profile_photo_submit{
+    padding: .45em .5em .55em;
+    margin-left: -.5em;
+    border: none;
+    background: rgb(255, 187, 0);
+    font-size: 15px;
+}
+/* Upload bar css styling */
+.bar{
+    display: none;
+    width: 90%;
+    padding: 3px;
+    margin: 10px auto;
+    background: rgb(223, 223, 223);
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+.bar-fill{
+    height: 5px;
+    display: block;
+    background: cornflowerblue;
+    border-radius: 3px;
+    width:0;
+    transition: width 0.8s ease-in;
+}
+
+#Reg_student, .Reg_student{
+    background: rgb(255, 187, 0);
+    margin: 0;
+    padding: 5px 0;
+    color: black;
+    /* height: 500px; */
+}
+#Sub_assignment{
+    background: rgb(255, 187, 0);
+    padding: 5px 0;
+    color: black;
+    margin-top: 2em;
+}
+.oubx{
+    width: 30%;
+    margin: 10px auto 0;
+    text-align: center;
+    border: 1px solid rgb(240, 181, 21);
+
+}
+.student_button{
+  background: transparent;
+  border: none;  
+}
+#student_name, #student_name_file{
+    font-size: 12px;
+    text-align: left;
+    padding: 5px 10px;
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    color: white;
+    text-decoration: none;
+}
+#sub1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: center;
+    width: 90%;
+    margin: 0 auto;
+}
+#sub{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: center;
+    width: 90%;
+    margin: 0 auto;
+}
+.deadline_name{
+    /* width: 500px; */
+    padding: .5em .5em .5em 0;
+    border: 1px solid rgb(240, 181, 21);
+    font-size: 12px;
+    background: rgb(54, 180, 54);
+    color: black;
+}
+#deadline_lec{
+    margin-right: 5px;
+    background:rgb(214, 86, 92);
+    padding: .5em;
+    color: white;
+}
+
+
+
+#result{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    text-align: center;
+}
+#result form{
+    width: 30%;
+    margin: 15% auto;
+    padding: 3em 0;
+    background: rgba(0,0,0,0.7);
+    /* border-radius: 5px; */
+}
+#result input{
+    width: 80%;
+    margin: .3em 0;
+    padding: .8em .2em;
+    /* border-radius: 5px; */
+    border: none;
+    font-size: 15px;
+}
+#result input[type=submit]{
+    background: rgb(54, 180, 54);
+    border: none;
+    color: white;
+    
+}
+
+#show_result{
+    margin-top: 2em;
+    padding: .5em;
+    font-size: 15px;
+    background: rgb(214, 86, 92);
+    color: white;
+}
+
+#result_hide_button{
+    background: rgb(214, 86, 92);
+    font-size: 20px;
+    padding: .2em .5em;
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    top: 9em;
+    left: 8em;
+    color: white;
+}
