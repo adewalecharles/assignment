@@ -43,7 +43,7 @@ $type = $_SESSION["type"];
     border: 2px solid #888;
     color: black;
 }
-#posts{
+.posts{
     color: green;
 }
 </style>
@@ -136,17 +136,37 @@ $type = $_SESSION["type"];
     $prep = $conn ->prepare($sql);
     $prep->execute();
 
-    $result = $prep ->fetchAll(PDO::FETCH_OBJ);
-    $ib = '';
-    foreach($result as $row){
-        // if($row->lecturerName === $_SESSION["username"]){
-            $ib .= '<div class="post_id">' 
-            . '<div>' . '<span id="posts"> Topic: '  . $row->topic . '</span><br><br>'. '<span> Description: ' . $row->post_body . '</span><br><br>'. '<span> Mark: ' . $row->mark . '</span><br><br>'. '<span> Posted On: ' . $row->post_date . '</span><br>'.'<input type="submit" name="solve" value="Solve">'. '</div>'
-            . '</div>';
-        // }
+
+    if (isset($_GET['id'])) {
+        $assignment_id = $_GET['id'];
+        include "workspace.php";
+        
+    }else {
+
+        $result = $prep ->fetchAll(PDO::FETCH_OBJ);
+        $ib = '';
+        foreach($result as $row){
+            // if($row->lecturerName === $_SESSION["username"]){
+                $ib .= '<div class="post_id">' 
+                . '<div>' . '<span id="posts"> Topic: '  . $row->topic . '</span><br><br>'. 
+                '<span> Description: ' . $row->post_body . '</span><br><br>'. 
+                '<span> Mark: ' . $row->mark . '</span><br><br>'. 
+                '<span> Posted On: ' . $row->post_date . '</span><br>'.
+                "<a href='dashboard.php?id={$row->ass_id}'> View </a>". 
+                '</div>'
+                . '</div>';
+            // }
+        }
+    
+        echo ( $ib );
+    
+
+
+
     }
 
-    echo ( $ib );
+
+
 ?>
     </div>
     </div>
